@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Pity | Bolsas e Acessórios em Crochê de Luxo</title>
+    <meta name="description" content="Descubra a elegância do crochê feito à mão pela Pity. Bolsas, chapéus, saídas de praia e acessórios exclusivos com design sofisticado. Encomende sua peça personalizada.">
+    <meta name="keywords" content="crochê, bolsas de crochê, moda praia, chapéu de crochê, artesanato de luxo, handmade, Pity crochê, saída de praia, acessórios femininos">
+    <meta name="author" content="Victor Alves">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- Variáveis de Cores (Baseadas no Logo) --- */
+        :root {
+            --primary-color: #6a1b9a; /* Roxo Profundo */
+            --secondary-color: #ab47bc; /* Roxo Médio/Magenta */
+            --accent-color: #e1bee7; /* Lavanda Claro */
+            --text-color: #333333;
+            --bg-light: #fdfbfd; /* Fundo levemente rosado/branco */
+            --white: #ffffff;
+            --gold: #d4af37; /* Toque de dourado para elegância */
+        }
+
+        /* --- Reset & Base --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+        }
+
+        a {
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            max-height: 80px; /* Ajuste conforme necessário quando inserir a imagem real */
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(106, 27, 154, 0.3), rgba(106, 27, 154, 0.1)), url('https://images.unsplash.com/photo-1584992236310-6eddd724a4c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 0;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-content {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 3rem;
+            border-radius: 8px;
+            max-width: 700px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .btn-cta {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(171, 71, 188, 0.4);
+        }
+
+        .btn-cta:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* --- About Section --- */
+        .about {
+            padding: 5rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* --- Gallery / Products --- */
+        .products {
+            padding: 5rem 2rem;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title span {
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 0 auto;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--bg-light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Placeholder images - substitua pelas fotos reais */
+        .card-img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .card-content p {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* --- Contact Section --- */
+        .contact {
+            padding: 5rem 2rem;
+            background-color: var(--accent-color);
+            background: linear-gradient(135deg, #f3e5f5 0%, #fff 100%);
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .form-group input, 
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: #25D366; /* Cor WhatsApp */
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #128C7E;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .social-icons {
+            margin-bottom: 1.5rem;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* --- Video Section Styles (Atualizado) --- */
+        .video-presentation {
+            margin-top: 120px;   
+            margin-bottom: 40px;         
+            padding: 0 20px; /* Espaço para não ficar colado no menu */
+            
+            background-color: var(--bg-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 280px; /* Tamanho reduzido e delicado */
+            position: relative;
+            
+            /* Estilo "Meigo" e Arredondado */
+            border-radius: 25px; /* Bordas bem arredondadas */
+            overflow: hidden;
+            
+            /* Moldura charmosa */
+            border: 6px double var(--accent-color); /* Borda dupla estilo costura/fio */
+            box-shadow: 0 8px 20px rgba(106, 27, 154, 0.15); /* Sombra suave roxa */
+            background-color: var(--white);
+            line-height: 0;
+        }
+
+        .brand-video {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover; /* Garante que preencha bem */
+        }
+
+        /* Ajuste Mobile */
+        @media (max-width: 768px) {
+            .video-presentation {
+                padding-top: 110px; /* Um pouco mais de espaço no celular */
+            }
+            .video-container {
+                max-width: 280px; /* Um pouco menor no celular */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <span class="logo-text"><img src="pity.png" alt="logo Pity" class="logo-img"> </span>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#produtos">Coleção</a>
+                <a href="#contato">Fale Conosco</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="video-presentation">
+        <div class="video-container">
+            <video 
+                autoplay 
+                muted 
+                loop 
+                playsinline
+                class="brand-video">
+                <source src="Criação_de_Vídeo_de_Apresentação_Pity.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
+        </div>
+    </section>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Arte em Crochê</h1>
+            <p>Bolsas, chapéus e moda praia feitos à mão com elegância e exclusividade. Descubra a beleza do artesanato de luxo.</p>
+            <a href="#produtos" class="btn-cta">Ver Coleção</a>
+        </div>
+    </section>
+
+    <section id="sobre" class="about">
+        <h2>A Essência Pity</h2>
+        <p>Cada ponto conta uma história. Na Pity, transformamos fios em peças exclusivas de design sofisticado. Nossas bolsas e acessórios são criados para quem valoriza a autenticidade do "feito à mão", combinando tendências contemporâneas com a tradição do crochê.</p>
+    </section>
+
+    <section id="produtos" class="products">
+        <div class="section-title">
+            <h2>Nossas Criações</h2>
+            <span></span>
+        </div>
+
+        <div class="grid-container">
+            <article class="product-card">
+                <img src="bolsa1.jpg" alt="Bolsa de crochê elegante" class="card-img">
+                <div class="card-content">
+                    <h3>Bolsas Exclusivas</h3>
+                    <p>Design único para compor seu estilo com sofisticação.</p>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="chapeu.jpg" alt="Chapéu de crochê para o verão" class="card-img">
+                <div class="card-content">
+                    <h3>Chapéus & Verão</h3>
+                    <p>Proteção e elegância para os dias de sol.</p>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="bolsa-praia.jpg" alt="Moda praia em crochê" class="card-img">
+                <div class="card-content">
+                    <h3>Moda Praia</h3>
+                    <p>Moda praia leve e moderna para brilhar no litoral.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="contato" class="contact">
+        <div class="section-title">
+            <h2>Fale Conosco</h2>
+            <span></span>
+            <p style="margin-top: 10px; color: #666;">Interessado em uma peça? Envie sua mensagem.</p>
+        </div>
+
+        <div class="contact-container">
+            <form id="whatsappForm">
+                <div class="form-group">
+                    <label for="name">Seu Nome</label>
+                    <input type="text" id="name" placeholder="Como gostaria de ser chamado?" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product">Interesse (Opcional)</label>
+                    <select id="product">
+                        <option value="Geral">Tenho uma dúvida geral</option>
+                        <option value="Bolsa">Quero encomendar uma Bolsa</option>
+                        <option value="Chapéu">Quero encomendar um Chapéu</option>
+                        <option value="Saída de Praia">Quero encomendar Saída de Praia</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" rows="4" placeholder="Olá, gostaria de saber mais sobre..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <i class="fab fa-whatsapp"></i> Enviar para WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://instagram.com/pity.bolsascroche" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5522997272594" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="footer-text">&copy; 2026 Pity Bolsas e Crochê. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // Captura os valores
+            const name = document.getElementById('name').value;
+            const product = document.getElementById('product').value;
+            const message = document.getElementById('message').value;
+
+            // Número de telefone (apenas números)
+            const phoneNumber = "5522997272594";
+
+            // Cria a mensagem formatada
+            // %0a quebra a linha na URL
+            const text = `*Olá, vim pelo site da Pity!*%0a%0a` +
+                         `*Nome:* ${name}%0a` +
+                         `*Interesse:* ${product}%0a` +
+                         `*Mensagem:* ${message}`;
+
+            // Cria a URL do WhatsApp
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
+
+            // Abre em nova aba
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
